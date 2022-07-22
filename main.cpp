@@ -19,7 +19,8 @@ void write_to_statement(std::string file_name){
         std::cin >> date;
         std::cout << "Введите зарплату: ";
         std::cin >> salary;
-        //TODO реализовать валидацию данных
+        //TODO реализовать валидацию данных для даты и зарплаты
+
         std::stringstream  record;
         record << name << " " << surname << " " << date << " " << salary;
         
