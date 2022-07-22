@@ -19,9 +19,10 @@ void write_to_statement(std::string file_name){
         std::cin >> date;
         std::cout << "Введите зарплату: ";
         std::cin >> salary;
+        //TODO реализовать валидацию данных
         std::stringstream  record;
         record << name << " " << surname << " " << date << " " << salary;
-        //TODO реализовать валидацию данных
+        
         file << record.str() << std::endl;
     } else {
         std::cout << "Error opening file." << std::endl;
