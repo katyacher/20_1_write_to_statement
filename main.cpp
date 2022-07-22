@@ -18,6 +18,29 @@ bool is_leap(int year){
         return false;
 }
 
+std::string get_part_str(std::string str) {
+    std::string part = "";
+    for (int i = 0; str[i] != '.' && i < str.length(); i++) {
+        part += str[i];
+    }
+    return part;
+}
+// if (part[i] >= '0' && part[i] <= '9'))
+
+bool check_format(std::string date){
+    for(int i = 0; i < 2; i++){
+        if ((get_part_str(date).length() != 1)|| (get_part_str(date).length() !=2)){
+            return false;
+        } else{
+            date.erase(0,get_part_str(date).length()+1);
+        }
+    }
+    if(get_part_str(date).length() != 4){
+        return false;
+    }
+    return true;
+}
+
 bool validate_date(std::string date) {
     // parse the date to day, month and year
     int day = std::stoi(date.substr(0, 2));
@@ -26,7 +49,7 @@ bool validate_date(std::string date) {
 
     if ((year > 0) && (year <= 9999)) {
         if (month >= 1 && month <= 12) {
-            if (month == 1 || month == 3 || month == 5 || month == 6 || month == 8 || month == 10) {
+            if (month == 1 || month == 3 || month == 5 || month == 6 || month == 8 || month == 10 || month == 12) {
                 if (day >= 1 && day <= 31) return true;
             } else if (month == 4 || month == 7 || month == 9 || month == 11) {
                 if (day >= 1 && day <= 30) return true;
