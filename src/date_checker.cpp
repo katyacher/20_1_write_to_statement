@@ -1,5 +1,5 @@
 #include <string>
-#include "date_checker.h"
+#include "../include/date_checker.h"
 
 bool check_dots_count(std::string data){
     int dot_count = 0;

@@ -2,7 +2,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
-#include "date_checker.h"
+#include "../include/date_checker.h"
 
 void write_to_statement(std::string file_name);
 void show_statement(std::string file_name);
